@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>KPIs Económicos</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAHElEQVQoz2P8z8BQz0AEYBxVSFVB9WgCAD2jAo2NuRR6gAAAABJRU5ErkJggg==">
+    
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  body.dark {
+    background-color: #0d1117;
+    color: #ffffff;
+  }
+
+  body.light {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .tradingview-widget-container {
+    border-bottom: 1px solid #2e2e2e;
+  }
+
+  a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+  </head>
+  <body>
+    
+<script>
+  function setTheme() {
+    const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.body.className = dark ? 'dark' : 'light';
+  }
+  setTheme();
+</script>
+
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+        "symbols": [
+          { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500 Index" },
+          { "proName": "FOREXCOM:NSXUSD", "title": "US 100 Cash CFD" },
+          { "proName": "FX_IDC:EURUSD", "title": "EUR to USD" },
+          { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
+          { "proName": "BITSTAMP:ETHUSD", "title": "Ethereum" },
+          { "description": "Gold", "proName": "OANDA:XAUUSD" },
+          { "description": "USD COP", "proName": "FX_IDC:USDCOP" }
+        ],
+        "showSymbolLogo": true,
+        "isTransparent": true,
+        "displayMode": "adaptive",
+        "colorTheme": "dark",
+        "locale": "es"
+      }
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+  </body>
+</html>
