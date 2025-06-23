@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>KPIs Económicos</title>
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAHElEQVQoz2P8z8BQz0AEYBxVSFVB9WgCAD2jAo2NuRR6gAAAABJRU5ErkJggg==">
-
   <style>
     html, body {
       margin: 0;
@@ -13,53 +11,30 @@
       height: 60px;
       overflow: hidden;
       font-family: 'Segoe UI', sans-serif;
-      font-size: 8px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.dark {
+      font-size: 9px;
       background-color: #0d1117;
-      color: #ffffff;
-    }
-
-    body.light {
-      background-color: #ffffff;
-      color: #000000;
+      color: white;
     }
 
     .tradingview-widget-container {
       width: 200px;
-      height: 50px;
+      height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: #0d1117;
       box-sizing: border-box;
+      padding: 0;
+      margin: 0;
     }
 
     .tradingview-widget-container__widget {
       width: 200px !important;
       height: 60px !important;
     }
-
-    a {
-      color: #1e90ff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
-
-<script>
-  function setTheme() {
-    const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.body.className = dark ? 'dark' : 'light';
-  }
-  setTheme();
-</script>
 
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
@@ -76,7 +51,7 @@
       { "description": "USD COP", "proName": "FX_IDC:USDCOP" }
     ],
     "showSymbolLogo": false,
-    "isTransparent": true,
+    "isTransparent": false,
     "displayMode": "compact",
     "colorTheme": "dark",
     "locale": "es"
